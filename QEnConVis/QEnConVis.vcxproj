@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DEA9CA3-9D4A-48E7-A38D-B586C68D24C0}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtModules>core;opengl;gui;widgets;openglextensions</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtModules>core;opengl;gui;widgets;openglextensions;</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./Src;./Src/Clustering;./Src/Data Models;./Src/DR;./Src/Framework;./Src/Fundamental;./Src/Topological;./Src/UIs;./Src/Vis Methods;./Src/tnt;./Src/3rdParty/tnt;./Src/3rdParty/Eigen;./Src/3rdParty/jama;./Src/3rdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <LanguageStandard>Default</LanguageStandard>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;Shapefile.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalIncludeDirectories>./Src;./Src/Clustering;./Src/Data Models;./Src/DR;./Src/Framework;./Src/Fundamental;./Src/Topological;./Src/UIs;./Src/Vis Methods;./Src/tnt;./Src/3rdParty/tnt;./Src/3rdParty/Eigen;./Src/3rdParty/jama;./Src/3rdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;Shapefile.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\3rdParty\mathtoolbox\classical-mds.cpp" />
+    <ClCompile Include="Src\Clustering\AHCClustering.cpp" />
+    <ClCompile Include="Src\Clustering\Clustering.cpp" />
+    <ClCompile Include="Src\Clustering\DBSCANClustering.cpp" />
+    <ClCompile Include="Src\Clustering\DensityBasedClustering.cpp" />
+    <ClCompile Include="Src\Clustering\KMeansClustering.cpp" />
+    <ClCompile Include="Src\Clustering\OPTICSClustering.cpp" />
+    <ClCompile Include="Src\Data Models\ArtificialModel.cpp" />
+    <ClCompile Include="Src\Data Models\DataField.cpp" />
+    <ClCompile Include="Src\Data Models\FeatureSet.cpp" />
+    <ClCompile Include="Src\Data Models\GridFrame.cpp" />
+    <ClCompile Include="Src\Data Models\MeteModel.cpp" />
+    <ClCompile Include="Src\Data Models\TimeStep.cpp" />
+    <ClCompile Include="Src\DR\MyPCA.cpp" />
+    <ClCompile Include="Src\Framework\EnsembleLayer.cpp" />
+    <ClCompile Include="Src\Framework\main.cpp" />
+    <ClCompile Include="Src\Framework\MainWindow.cpp" />
+    <ClCompile Include="Src\Framework\MyGLOperator.cpp" />
+    <ClCompile Include="Src\Framework\MyGLWidget.cpp" />
+    <ClCompile Include="Src\Framework\MyGLWidgetBase.cpp" />
+    <ClCompile Include="Src\Framework\MyMapWidget.cpp" />
+    <ClCompile Include="Src\Fundamental\BandTesser.cpp" />
+    <ClCompile Include="Src\Fundamental\ColorMap.cpp" />
+    <ClCompile Include="Src\Fundamental\ContourBandGenerator.cpp" />
+    <ClCompile Include="Src\Fundamental\CostLineLayer.cpp" />
+    <ClCompile Include="Src\Fundamental\GLFont.cpp" />
+    <ClCompile Include="Src\Fundamental\MathTool.cpp" />
+    <ClCompile Include="Src\Fundamental\MeteLayer.cpp" />
+    <ClCompile Include="Src\Fundamental\Timer.cpp" />
+    <ClCompile Include="Src\Fundamental\UnCertaintyArea.cpp" />
+    <ClCompile Include="Src\Topological\ContourGenerator.cpp" />
+    <ClCompile Include="Src\UIs\DisplayCtrlWidget.cpp" />
+    <ClCompile Include="Src\UIs\MyChartWidget.cpp" />
+    <ClCompile Include="Src\Vis Methods\ContourBoxplots.cpp" />
+    <ClCompile Include="Src\Vis Methods\ContourProbabilityPlots.cpp" />
+    <ClCompile Include="Src\Vis Methods\EnConVis.cpp" />
+    <ClCompile Include="Src\Vis Methods\GeneralPlots.cpp" />
+    <ClCompile Include="Src\Vis Methods\IsoContourDensityPlots.cpp" />
+    <ClCompile Include="Src\Vis Methods\SpaghettiPlot.cpp" />
+    <ClCompile Include="Src\Vis Methods\VariabilityPlots.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\3rdParty\INIreader.hpp" />
+    <ClInclude Include="Src\3rdParty\mathtoolbox\classical-mds.hpp" />
+    <ClInclude Include="Src\Clustering\AHCClustering.h" />
+    <ClInclude Include="Src\Clustering\Clustering.h" />
+    <ClInclude Include="Src\Clustering\DBSCANClustering.h" />
+    <ClInclude Include="Src\Clustering\DensityBasedClustering.h" />
+    <ClInclude Include="Src\Clustering\KMeansClustering.h" />
+    <ClInclude Include="Src\Clustering\OPTICSClustering.h" />
+    <ClInclude Include="Src\Data Models\ArtificialModel.h" />
+    <ClInclude Include="Src\Data Models\DataField.h" />
+    <ClInclude Include="Src\Data Models\FeatureSet.h" />
+    <ClInclude Include="Src\Data Models\GridFrame.h" />
+    <ClInclude Include="Src\Data Models\TimeStep.h" />
+    <ClInclude Include="Src\DR\MyPCA.h" />
+    <ClInclude Include="Src\Framework\EnsembleLayer.h" />
+    <ClInclude Include="Src\Framework\MyGLOperator.h" />
+    <ClInclude Include="Src\Framework\Switch.h" />
+    <ClInclude Include="Src\Fundamental\BandTesser.h" />
+    <ClInclude Include="Src\Fundamental\ColorMap.h" />
+    <ClInclude Include="Src\Fundamental\ContourBandGenerator.h" />
+    <ClInclude Include="Src\Fundamental\CostLineLayer.h" />
+    <ClInclude Include="Src\Fundamental\def.h" />
+    <ClInclude Include="Src\Fundamental\GLFont.h" />
+    <ClInclude Include="Src\Fundamental\LayerLayout.h" />
+    <ClInclude Include="Src\Fundamental\MathTool.h" />
+    <ClInclude Include="Src\Fundamental\MathTypes.hpp" />
+    <ClInclude Include="Src\Fundamental\MeteLayer.h" />
+    <ClInclude Include="Src\Fundamental\Timer.h" />
+    <ClInclude Include="Src\Fundamental\UnCertaintyArea.h" />
+    <ClInclude Include="Src\tnt\tnt.h" />
+    <ClInclude Include="Src\tnt\tnt_array1d.h" />
+    <ClInclude Include="Src\tnt\tnt_array1d_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_array2d.h" />
+    <ClInclude Include="Src\tnt\tnt_array2d_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_array3d.h" />
+    <ClInclude Include="Src\tnt\tnt_array3d_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_cmat.h" />
+    <ClInclude Include="Src\tnt\tnt_fortran_array1d.h" />
+    <ClInclude Include="Src\tnt\tnt_fortran_array1d_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_fortran_array2d.h" />
+    <ClInclude Include="Src\tnt\tnt_fortran_array2d_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_fortran_array3d.h" />
+    <ClInclude Include="Src\tnt\tnt_fortran_array3d_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_i_refvec.h" />
+    <ClInclude Include="Src\tnt\tnt_math_utils.h" />
+    <ClInclude Include="Src\tnt\tnt_sparse_matrix_csr.h" />
+    <ClInclude Include="Src\tnt\tnt_stopwatch.h" />
+    <ClInclude Include="Src\tnt\tnt_subscript.h" />
+    <ClInclude Include="Src\tnt\tnt_vec.h" />
+    <ClInclude Include="Src\tnt\tnt_version.h" />
+    <ClInclude Include="Src\Topological\BasicStruct.h" />
+    <ClInclude Include="Src\Topological\ContourGenerator.h" />
+    <ClInclude Include="Src\Vis Methods\ContourBoxplots.h" />
+    <ClInclude Include="Src\Vis Methods\ContourProbabilityPlots.h" />
+    <ClInclude Include="Src\Vis Methods\EnConVis.h" />
+    <ClInclude Include="Src\Vis Methods\GeneralPlots.h" />
+    <ClInclude Include="Src\Vis Methods\IsoContourDensityPlots.h" />
+    <ClInclude Include="Src\Vis Methods\SpaghettiPlot.h" />
+    <ClInclude Include="Src\Vis Methods\VariabilityPlots.h" />
+    <QtMoc Include="Src\UIs\MyChartWidget.h" />
+    <QtMoc Include="Src\UIs\DisplayCtrlWidget.h" />
+    <QtMoc Include="Src\Framework\MyMapWidget.h" />
+    <QtMoc Include="Src\Framework\MyGLWidgetBase.h" />
+    <QtMoc Include="Src\Framework\MyGLWidget.h" />
+    <QtMoc Include="Src\Framework\MainWindow.h" />
+    <QtMoc Include="Src\Data Models\MeteModel.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
