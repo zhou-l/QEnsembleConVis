@@ -1,7 +1,7 @@
 # Introduction
 This is an adaptation of the original author's code to Visual Studio. 
 
-The code base of the original author's: 
+The code base of the original author's is here: 
 https://github.com/ZhangMingdong/EnConVis.
 
 The original code is an implementation of the paper:
