@@ -2,9 +2,11 @@
 This is an adaptation of the original author's code to Visual Studio. 
 
 The code base of the original author's is here: 
+
 https://github.com/ZhangMingdong/EnConVis.
 
 The original code is an implementation of the paper:
+
 M. Zhang, Q. Li, L. Chen, X. Yuan and J. Yong, "EnConVis: A Unified Framework for Ensemble Contour Visualization," in IEEE Transactions on Visualization and Computer Graphics, vol. 29, no. 4, pp. 2067-2079, 1 April 2023, doi: 10.1109/TVCG.2021.3140153.
 
 # EnConVis
